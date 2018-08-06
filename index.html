@@ -1,80 +1,47 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>蝎子科技</title>
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 8rem;
-        }
-
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-    <style>
-        html,
-        * {
-            -webkit-user-select: text !important;
-            -moz-user-select: text !important;
-        }
-    </style>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+    <title>我的读书</title>
 </head>
 
-<body style="">
-    <div class="flex-center position-ref full-height">
-        <div class="content">
-            <div class="title m-b-md">
-                coming soon&nbsp;
-            </div>
-        </div>
+<body>
+    <div id="clickload">假装异步加载中...</div>
+    <div id="wrap">
+        <section id="content" class="page">
+            <article class="post">
+                <div class="con">
+                    <article>
+                        <div id="archives">
+                            <div id="douban">
+                                <div id="book-reading-wrap"></div>
+                                <div id="book-read-wrap"></div>
+                                <div id="book-wish-wrap"></div>
+                            </div>
+                        </div>
+                    </article>
+                    <script type="text/javascript" src="douban.api.js"></script>
+                    <script type="text/javascript">
+                        var dbapi = new DoubanApi();
+                        $(document).ready(function () {
+                            dbapi.show();
+                        });
+                    </script>
+                </div>
+            </article>
+            <div class="clear"></div>
+        </section>
+        <div class="clear"></div>
     </div>
+    <script type="text/javascript" src="base.js"></script>
 </body>
+
 </html>
